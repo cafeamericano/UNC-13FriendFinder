@@ -30,9 +30,46 @@ app.get('/api/friends', function(req, res) {
 })
 
 app.post('/api/friends', function(req, res) {
-    console.log(req.body)
-    friendList.push(req.body)
-    res.send('Added record')
+    let yourScores = (req.body.scores)
+    let resultObj = {}
+
+    //Calculate difference between your scores and everyone else's
+    for (i=0; i < friendList.length; i++) {
+        let totalDifference = 0;
+        let theirScores = (friendList[i].scores)
+        for (j=0; j < theirScores.length; j++) {
+            totalDifference += Math.abs(yourScores[j] - theirScores[j])
+        }
+
+        let personName = friendList[i].name
+        let personDiff = totalDifference
+        console.log(`${personName}: ${personDiff}`)
+
+        //Add that person to the result object
+        resultObj[personName] = personDiff
+    }
+
+    //Put the scores into an array
+    let scores = Object.values(resultObj)
+
+    //Find the lowest value
+    let indexOfLeastDifferent;
+    let lowestValue;
+    for (i=0; i < scores.length; i++) {
+        console.log('This score:' + scores[i])
+        if (scores[i] < lowestValue || lowestValue === undefined) {
+            lowestValue = scores[i]
+            indexOfLeastDifferent = i
+        }
+        console.log(lowestValue)
+    }
+    console.log('Index of Least Different:' + indexOfLeastDifferent)
+
+    //Match index of lowest score to index of best match's name
+    let names = (Object.keys(resultObj))
+    let bestMatch = (names[indexOfLeastDifferent])
+
+    res.send('Best match: ' + bestMatch)
 })
 
 //#############################################################################
