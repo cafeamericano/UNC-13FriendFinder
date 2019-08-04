@@ -6,8 +6,9 @@ var path = require('path')
 const app = express()
 let port = process.env.port || 3000
 
-//Express Public Folder
-app.use(express.static('/app/public'));
+//Allow express to handle post requests
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 //Friend List Import
 var friendList = require('./app/data/friends.js')
@@ -29,7 +30,9 @@ app.get('/api/friends', function(req, res) {
 })
 
 app.post('/api/friends', function(req, res) {
-    //res.json(friendList)
+    console.log(req.body)
+    friendList.push(req.body)
+    res.send('Added record')
 })
 
 //#############################################################################
