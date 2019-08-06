@@ -4,7 +4,7 @@ var path = require('path')
 
 //Express->App and Port Definition
 const app = express()
-let port = process.env.port || 3000
+let port = process.env.PORT|| 3000
 
 //Allow express to handle post requests
 app.use(express.urlencoded({ extended: true }));
