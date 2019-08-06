@@ -24,62 +24,205 @@
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
+    <!-- Animate -->
+    <link href='animate.css' rel='stylesheet'>
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Varela+Round&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <!-- Style -->
+    <style>
+        body {
+            background-image: url("background.jpg");
+            background-size: cover;
+            background-repeat: repeat;
+            background-attachment: fixed;
+            font-family: 'Varela Round', sans-serif;
+        }
+
+        #questionDiv {
+            background: rgba(15, 158, 115, 0.5);
+            padding: 10px
+        }
+
+        #submitButton {
+            background: rgb(199, 16, 101) !important;
+            border-color: rgb(199, 16, 101) !important
+        }
+
+        h6 {
+            color: white;
+            font-size: 50px
+        }
+    </style>
+
 </head>
 
 <body class='p-5'>
     <div class='container'>
         <div class='row'>
 
-            <div class='col'>
-
+            <div id='questionDiv' class='col-lg-6 col-md-12 animated fadeInLeft'>
+                <h6>Tell us about yourself.</h6>
+                <br>
                 <form id='submitAnswersForm'>
                     <div class='form-group card p-2'>
                         <label>I enjoy going to the movies.</label>
-                        <input type="range" class="form-control-range" min="1" max="5" name='movies'>
+                        <br>
+                        <div class='row'>
+                            <div class='col-1 text-left'>
+                                <span><i class="far fa-thumbs-down"></i></span>
+                            </div>
+                            <div class='col-10'>
+                                <input type="range" class="form-control-range" min="1" max="5" name='movies'>
+                            </div>
+                            <div class='col-1 text-right'>
+                                <span><i class="far fa-thumbs-up"></i></span>
+                            </div>
+                        </div>
                     </div>
                     <div class='form-group card p-2'>
                         <label>I like to eat tacos.</label>
-                        <input type="range" class="form-control-range" min="1" max="5" name='tacos'>
-                    </div>
+                        <br>
+                        <div class='row'>
+                            <div class='col-1 text-left'>
+                                <span><i class="far fa-thumbs-down"></i></span>
+                            </div>
+                            <div class='col-10'>
+                                <input type="range" class="form-control-range" min="1" max="5" name='tacos'>
+                            </div>
+                            <div class='col-1 text-right'>
+                                <span><i class="far fa-thumbs-up"></i></span>
+                            </div>
+                        </div>                    </div>
                     <div class='form-group card p-2'>
                         <label>I would enjoy a visit to the beach.</label>
-                        <input type="range" class="form-control-range" min="1" max="5" name='beach'>
-                    </div>
+                        <br>
+                        <div class='row'>
+                            <div class='col-1 text-left'>
+                                <span><i class="far fa-thumbs-down"></i></span>
+                            </div>
+                            <div class='col-10'>
+                                <input type="range" class="form-control-range" min="1" max="5" name='beach'>
+                            </div>
+                            <div class='col-1 text-right'>
+                                <span><i class="far fa-thumbs-up"></i></span>
+                            </div>
+                        </div>                    </div>
                     <div class='form-group card p-2'>
                         <label>I tend to wake up early.</label>
-                        <input type="range" class="form-control-range" min="1" max="5" name='earlybird'>
-                    </div>
+                        <br>
+                        <div class='row'>
+                            <div class='col-1 text-left'>
+                                <span><i class="far fa-thumbs-down"></i></span>
+                            </div>
+                            <div class='col-10'>
+                                <input type="range" class="form-control-range" min="1" max="5" name='earlybird'>
+                            </div>
+                            <div class='col-1 text-right'>
+                                <span><i class="far fa-thumbs-up"></i></span>
+                            </div>
+                        </div>                    </div>
                     <div class='form-group card p-2'>
                         <label>I would consider myself to be an adventurous person.</label>
-                        <input type="range" class="form-control-range" min="1" max="5" name='adventurous'>
-                    </div>
+                        <br>
+                        <div class='row'>
+                            <div class='col-1 text-left'>
+                                <span><i class="far fa-thumbs-down"></i></span>
+                            </div>
+                            <div class='col-10'>
+                                <input type="range" class="form-control-range" min="1" max="5" name='adventurous'>
+                            </div>
+                            <div class='col-1 text-right'>
+                                <span><i class="far fa-thumbs-up"></i></span>
+                            </div>
+                        </div>                    </div>
                     <div class='form-group card p-2'>
                         <label>I prefer a warm climate over a cool one.</label>
-                        <input type="range" class="form-control-range" min="1" max="5" name='climate'>
-                    </div>
+                        <br>
+                        <div class='row'>
+                            <div class='col-1 text-left'>
+                                <span><i class="far fa-thumbs-down"></i></span>
+                            </div>
+                            <div class='col-10'>
+                                <input type="range" class="form-control-range" min="1" max="5" name='climate'>
+                            </div>
+                            <div class='col-1 text-right'>
+                                <span><i class="far fa-thumbs-up"></i></span>
+                            </div>
+                        </div>                    </div>
                     <div class='form-group card p-2'>
                         <label>I like cats.</label>
-                        <input type="range" class="form-control-range" min="1" max="5" name='cats'>
-                    </div>
+                        <br>
+                        <div class='row'>
+                            <div class='col-1 text-left'>
+                                <span><i class="far fa-thumbs-down"></i></span>
+                            </div>
+                            <div class='col-10'>
+                                <input type="range" class="form-control-range" min="1" max="5" name='cats'>
+                            </div>
+                            <div class='col-1 text-right'>
+                                <span><i class="far fa-thumbs-up"></i></span>
+                            </div>
+                        </div>                    </div>
                     <div class='form-group card p-2'>
                         <label>I like dogs.</label>
-                        <input type="range" class="form-control-range" min="1" max="5" name='dogs'>
-                    </div>
+                        <br>
+                        <div class='row'>
+                            <div class='col-1 text-left'>
+                                <span><i class="far fa-thumbs-down"></i></span>
+                            </div>
+                            <div class='col-10'>
+                                <input type="range" class="form-control-range" min="1" max="5" name='dogs'>
+                            </div>
+                            <div class='col-1 text-right'>
+                                <span><i class="far fa-thumbs-up"></i></span>
+                            </div>
+                        </div>                    </div>
                     <div class='form-group card p-2'>
                         <label>I enjoy reading books.</label>
-                        <input type="range" class="form-control-range" min="1" max="5" name='read'>
-                    </div>
+                        <br>
+                        <div class='row'>
+                            <div class='col-1 text-left'>
+                                <span><i class="far fa-thumbs-down"></i></span>
+                            </div>
+                            <div class='col-10'>
+                                <input type="range" class="form-control-range" min="1" max="5" name='read'>
+                            </div>
+                            <div class='col-1 text-right'>
+                                <span><i class="far fa-thumbs-up"></i></span>
+                            </div>
+                        </div>                    </div>
                     <div class='form-group card p-2'>
                         <label>I would consider myself to be a mellow person.</label>
-                        <input type="range" class="form-control-range" min="1" max="5" name='mellow'>
-                    </div>
+                        <br>
+                        <div class='row'>
+                            <div class='col-1 text-left'>
+                                <span><i class="far fa-thumbs-down"></i></span>
+                            </div>
+                            <div class='col-10'>
+                                <input type="range" class="form-control-range" min="1" max="5" name='mellow'>
+                            </div>
+                            <div class='col-1 text-right'>
+                                <span><i class="far fa-thumbs-up"></i></span>
+                            </div>
+                        </div>                    </div>
                     <div class='text-right'>
                         <button id="cancelButton" class='btn btn-secondary'>Cancel</button>
-                        <button type="submit" class='btn btn-primary' data-toggle="modal"
+                        <button type="submit" id='submitButton' class='btn btn-primary' data-toggle="modal"
                             data-target="#exampleModalCenter">Submit</button>
                     </div>
                 </form>
             </div>
+
+            <div class='col-lg-6 col-md-12'>
+
+            </div>
+
         </div>
 
         <!-- Modal -->
@@ -88,17 +231,21 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+                        <h5 class="modal-title" id="exampleModalCenterTitle">Results</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <div id='resultModalBody' class="modal-body">
-
+                    <div id='resultModalBody' class="modal-body row">
+                        <div class='col-6'>
+                            <div id='matchPicture'></div>
+                        </div>
+                        <div class='col-6'>
+                            <div id='matchName'></div>
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
                     </div>
                 </div>
             </div>
@@ -114,9 +261,12 @@
                 method: "POST",
                 data: $('#submitAnswersForm').serialize()
             }).then(function (response) {
-                console.log(response)
-                $('#resultModalBody').empty()
-                $('#resultModalBody').append(response)
+                console.log(response.name)
+                console.log(response.photo)
+                $('#matchPicture').empty()
+                $('#matchName').empty()
+                $('#matchPicture').append(`<img src=${response.photo}>`)
+                $('#matchName').append(`<p>It looks like you'd be a really great match with ${response.name}!</p>`)
             });
         })
 

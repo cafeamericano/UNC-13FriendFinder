@@ -24,14 +24,52 @@
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
+    <!-- Animate -->
+    <link href='animate.css' rel='stylesheet'>
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Varela+Round&display=swap" rel="stylesheet">
+
+    <!-- Style -->
+    <style>
+        body {
+            background-image: url("background.jpg");
+            background-size: cover;
+            background-repeat: repeat;
+            background-attachment: fixed;
+            font-family: 'Varela Round', sans-serif;
+        }
+
+        h1 {
+            color: white;
+            font-size: 120px
+        }
+
+        h4 {
+            color: white;
+            font-size: 50px
+        }
+
+        main {
+            background: rgba(15, 158, 115, 0.5)
+        }
+
+        button {
+            background: rgb(199, 16, 101) !important;
+            border-color: rgb(199, 16, 101) !important
+        }
+    </style>
+
 </head>
 
 <body class='p-5'>
-    <h1>Welcome to Friend Finder</h1>
-
-    <form method="GET" action="/survey">
-        <button class='btn btn-primary' type='submit'>Get Started</button>
-    </form>
+    <main class='p-3 animated fadeInLeft'>
+        <h4>Welcome to</h4>
+        <h1>Friend <br> Finder</h1>
+        <form method="GET" action="/survey">
+            <button class='btn btn-primary' type='submit'>Get Started</button>
+        </form>
+    </main>
 </body>
 
 </html>
