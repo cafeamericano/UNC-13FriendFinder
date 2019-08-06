@@ -13,7 +13,7 @@ app.use(express.json());
 //Friend List Import
 var friendList = require('./app/data/friends.js')
 
-//Routes#######################################################################
+//#############################################################################
 
 //HTML ROUTES
 app.get('/', function(req, res) {
@@ -30,50 +30,58 @@ app.get('/api/friends', function(req, res) {
 })
 
 app.post('/api/friends', function(req, res) {
-    let yourScores = (req.body.scores)
-    let resultObj = {}
-
-    //Calculate difference between your scores and everyone else's
-    for (i=0; i < friendList.length; i++) {
-        let totalDifference = 0;
-        let theirScores = (friendList[i].scores)
-        for (j=0; j < theirScores.length; j++) {
-            totalDifference += Math.abs(yourScores[j] - theirScores[j])
-        }
-
-        let personName = friendList[i].name
-        let personDiff = totalDifference
-        console.log(`${personName}: ${personDiff}`)
-
-        //Add that person to the result object
-        resultObj[personName] = personDiff
-    }
-
-    //Put the scores into an array
-    let scores = Object.values(resultObj)
-
-    //Find the lowest value
-    let indexOfLeastDifferent;
-    let lowestValue;
-    for (i=0; i < scores.length; i++) {
-        console.log('This score:' + scores[i])
-        if (scores[i] < lowestValue || lowestValue === undefined) {
-            lowestValue = scores[i]
-            indexOfLeastDifferent = i
-        }
-        console.log(lowestValue)
-    }
-    console.log('Index of Least Different:' + indexOfLeastDifferent)
-
-    //Match index of lowest score to index of best match's name
-    let names = (Object.keys(resultObj))
-    let bestMatch = (names[indexOfLeastDifferent])
-
-    res.send('Best match: ' + bestMatch)
+    let yourScores = (Object.values(req.body))
+    console.log(yourScores)
+    res.send('Best match: ' + findBestMatch(yourScores))
 })
 
 //#############################################################################
+
 //Listen
 app.listen(port, function () {
     console.log(`Listening on port ${port}.`)
 })
+
+//#############################################################################
+
+function findBestMatch(yourScores) {
+        //Establish an empty result object
+        let resultObj = {}
+
+        //Calculate difference between your scores and everyone else's
+        for (i=0; i < friendList.length; i++) {
+            let totalDifference = 0;
+            let theirScores = (friendList[i].scores)
+            for (j=0; j < theirScores.length; j++) {
+                totalDifference += Math.abs(yourScores[j] - theirScores[j])
+            }
+    
+            let personName = friendList[i].name
+            let personDiff = totalDifference
+            console.log(`${personName}: ${personDiff}`)
+    
+            //Add that person to the result object with their score
+            resultObj[personName] = personDiff
+        }
+    
+        //Put the scores into an array
+        let scores = Object.values(resultObj)
+    
+        //Find the lowest value
+        let indexOfLeastDifferent;
+        let lowestValue;
+        for (i=0; i < scores.length; i++) {
+            if (scores[i] < lowestValue || lowestValue === undefined) {
+                lowestValue = scores[i]
+                indexOfLeastDifferent = i
+            }
+        }
+        console.log('Index of Least Different:' + indexOfLeastDifferent)
+    
+        //Match index of lowest score to index of best match's name
+        let names = (Object.keys(resultObj))
+        let bestMatch= (names[indexOfLeastDifferent])
+    
+        //Return name of the best match
+        return bestMatch
+}
