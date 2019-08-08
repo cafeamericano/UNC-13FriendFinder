@@ -246,7 +246,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button id='playAgainButton' type="button" class="btn btn-secondary" data-dismiss="modal">Play Again</button>
+                        <div id='playAgainButton' class="btn btn-secondary">Play Again</div>
                     </div>
                 </div>
             </div>
@@ -275,7 +275,7 @@
             window.location.replace('/')
         })
 
-        $(document).on('click', '#retryButton', function () {
+        $(document).on('click', '#playAgainButton', function () {
             window.location.replace('/survey')
         })
 
