@@ -1,5 +1,12 @@
 # **UNC Assignment #11 - Friend Finder**
-> Created by Matthew Farmer
+
+## Credits
+
+©2019 Matthew Farmer
+
+## Application Link
+
+https://unc13friendfinder.herokuapp.com/
 
 ## About
 'Friend Finder' is an application that asks users a series of questions, sends their answers to a server where these answers are compared to those of friends on file, and receives a response from the server to show users the name and picture of their closest match.
